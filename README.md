@@ -27,7 +27,7 @@ powerline
 
 This completes it! Enjoy!
 
-## Keybindings
+## Key Bindings
 
 ```
 ALT-F               Load file in the current window.
