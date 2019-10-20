@@ -141,15 +141,21 @@ There are two things you can do about this warning:
 ; Bright-red TODOs
  (setq fixme-modes '(c++-mode c-mode emacs-lisp-mode))
  (make-face 'font-lock-fixme-face)
- (make-face 'font-lock-note-face)
+(make-face 'font-lock-note-face)
+(make-face 'font-lock-fix-face)
+(make-face 'font-lock-bug-face)
  (mapc (lambda (mode)
 	 (font-lock-add-keywords
 	  mode
 	  '(("\\<\\(TODO\\)" 1 'font-lock-fixme-face t)
-            ("\\<\\(NOTE\\)" 1 'font-lock-note-face t))))
+            ("\\<\\(NOTE\\)" 1 'font-lock-note-face t)
+	    ("\\<\\(FIX\\)" 1 'font-lock-fix-face t)
+	    ("\\<\\(BUG\\)" 1 'font-lock-bug-face t))))
 	fixme-modes)
  (modify-face 'font-lock-fixme-face "Red" nil nil t nil t nil nil)
- (modify-face 'font-lock-note-face "Dark Green" nil nil t nil t nil nil)
+(modify-face 'font-lock-note-face "Dark Green" nil nil t nil t nil nil)
+(modify-face 'font-lock-fix-face "Yellow" nil nil t nil t nil nil)
+(modify-face 'font-lock-bug-face "Orange" nil nil t nil t nil nil)
 
 ; Accepted file extensions and their appropriate modes
 (setq auto-mode-alist
