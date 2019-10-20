@@ -26,3 +26,44 @@ powerline
 ```
 
 This completes it! Enjoy!
+
+## Keybindings
+
+```
+ALT-F               Load file in the current window.
+ALT-SHIFT-F         Load file in the other window.
+
+ALT-S               Save the file in the current window.
+
+ALT-W               Switch to the other buffer.
+ALT-M               Looks for and executes a build.bat.
+
+ALT-C               Switches between H file and CPP file in the current window.
+ALT-SHIFT-C         Switches between H file and CPP file in the other window.
+
+ALT-K               Kills the buffer.
+ALT-R               Revert the buffer.
+
+ALT-U               Undo last change.
+
+CTRL-SPACE          Sets mark.
+CTRL-Q              Copies the block.
+CTRL-W              Cuts the block.
+CTRL-F              Pastes the block.
+
+ALT-SHIFT-:         Jumps back to the old mark.
+
+ALT-J               Jumps to function by name.
+
+CTRL-S              Forward Search.
+CTRL-R              Backward Search.
+
+ALT-O               Query Replace then y or n.
+ALT-L               Replace inside block only.
+
+ALT-M               Build project.
+
+ATL+[               Begin keyboard macro.
+ALT+]               End keyboard macro.
+ALT-'               Replat keyboard macro.
+```
