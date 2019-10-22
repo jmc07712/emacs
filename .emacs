@@ -614,4 +614,4 @@ There are two things you can do about this warning:
 
 (setq make-backup-files nil)
 (setq auto-save-default nil)
-(auto-complete-mode)
+(global-auto-complete-mode t)
