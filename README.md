@@ -65,8 +65,6 @@ CTRL-R              Backward Search.
 ALT-O               Query Replace then y or n.
 ALT-L               Replace inside block only.
 
-ALT-M               Build project.
-
 ATL+[               Begin keyboard macro.
 ALT+]               End keyboard macro.
 ALT-'               Replat keyboard macro.
