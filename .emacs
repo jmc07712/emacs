@@ -42,7 +42,7 @@ There are two things you can do about this warning:
  '(mouse-wheel-scroll-amount (quote (15)))
  '(package-selected-packages
    (quote
-    (doom-themes atom-one-dark-theme auto-complete airline-themes gruvbox-theme)))
+    (neotree doom-themes atom-one-dark-theme auto-complete airline-themes gruvbox-theme)))
  '(version-control nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -621,6 +621,10 @@ There are two things you can do about this warning:
 (define-key global-map "	" 'indent-region)
 
 (setq inhibit-startup-screen t)
+
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+(require 'all-the-icons)
 
 ;(load-theme 'gruvbox-dark-hard)
 (load-theme 'doom-tomorrow-night t)
