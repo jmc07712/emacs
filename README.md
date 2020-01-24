@@ -5,8 +5,9 @@
 ### Windows
 On Windows, simply put this `.emacs` file in your HOME directory specified by emacs. This is usually 
 ```sh
-C:\Users\<username>\AppData
+C:\Users\<username>\AppData\.emacs
 ```
+You then need to rename `.emacs` to `init.el`. After that, you should be good!
 
 ### Linux
 Place the `.emacs` file in your HOME (`~/`) directory. That's it!
