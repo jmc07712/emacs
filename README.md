@@ -23,6 +23,8 @@ auto-complete
 airline-themes
 <M+x> package-install RET
 powerline
+<M+x> package-install RET
+doom-themes
 ```
 
 This completes it! Enjoy!
