@@ -39,6 +39,7 @@ ALT-S               Save the file in the current window.
 
 ALT-W               Switch to the other buffer.
 ALT-M               Looks for and executes a build.bat.
+F5                  Looks for and executes a debug.bat.
 
 ALT-C               Switches between H file and CPP file in the current window.
 ALT-SHIFT-C         Switches between H file and CPP file in the other window.
