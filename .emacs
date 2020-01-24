@@ -40,7 +40,9 @@ There are two things you can do about this warning:
  '(mouse-wheel-follow-mouse nil)
  '(mouse-wheel-progressive-speed nil)
  '(mouse-wheel-scroll-amount (quote (15)))
- '(package-selected-packages (quote (auto-complete airline-themes gruvbox-theme)))
+ '(package-selected-packages
+   (quote
+    (doom-themes atom-one-dark-theme auto-complete airline-themes gruvbox-theme)))
  '(version-control nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -86,6 +88,7 @@ There are two things you can do about this warning:
 
 (when jared-win32 
   (setq jared-makescript "build.bat")
+  (setq jared-debugscript "debug.bat")
 )
 
 (when jared-aquamacs 
@@ -102,10 +105,12 @@ There are two things you can do about this warning:
   (scroll-bar-mode nil)
   (setq mac-pass-command-to-system nil)
   (setq jared-makescript "./build.macosx")
+  (setq jared-debugscript "./debug.macosx")
 )
 
 (when jared-linux
   (setq jared-makescript "./build.linux")
+  (setq jared-debugscript "./debug.linux")
   (display-battery-mode 1)
 )
 
@@ -228,7 +233,7 @@ There are two things you can do about this warning:
   (c-add-style "BigFun" jared-big-fun-c-style t)
   
   ; 4-space tabs
-  (setq tab-width 4
+  (setq tab-width 3
         indent-tabs-mode nil)
 
   ; Additional style stuff
@@ -540,6 +545,13 @@ There are two things you can do about this warning:
   (other-window 1))
 (define-key global-map "\em" 'make-without-asking)
 
+(defun debug-without-asking()
+  "Run devenv command on build."
+  (interactive)
+  (if (find-project-directory) (compile jared-debugscript))
+  (other-window 1))
+(define-key global-map (kbd "<f5>") 'debug-without-asking)
+
 ; Commands
 (set-variable 'grep-command "grep -irHn ")
 (when jared-win32
@@ -565,23 +577,23 @@ There are two things you can do about this warning:
 
 (add-to-list 'default-frame-alist '(font . "Liberation Mono-11.5"))
 (set-face-attribute 'default t :font "Liberation Mono-11.5")
-(set-face-attribute 'font-lock-builtin-face nil :foreground "#DAB98F")
-(set-face-attribute 'font-lock-comment-face nil :foreground "gray50")
-(set-face-attribute 'font-lock-constant-face nil :foreground "olive drab")
-(set-face-attribute 'font-lock-doc-face nil :foreground "gray50")
-(set-face-attribute 'font-lock-function-name-face nil :foreground "burlywood3")
-(set-face-attribute 'font-lock-keyword-face nil :foreground "DarkGoldenrod3")
-(set-face-attribute 'font-lock-string-face nil :foreground "olive drab")
-(set-face-attribute 'font-lock-type-face nil :foreground "burlywood3")
-(set-face-attribute 'font-lock-variable-name-face nil :foreground "burlywood3")
+;(set-face-attribute 'font-lock-builtin-face nil :foreground "#DAB98F")
+;(set-face-attribute 'font-lock-comment-face nil :foreground "gray50")
+;(set-face-attribute 'font-lock-constant-face nil :foreground "olive drab")
+;(set-face-attribute 'font-lock-doc-face nil :foreground "gray50")
+;(set-face-attribute 'font-lock-function-name-face nil :foreground "burlywood3")
+;(set-face-attribute 'font-lock-keyword-face nil :foreground "DarkGoldenrod3")
+;(set-face-attribute 'font-lock-string-face nil :foreground "olive drab")
+;(set-face-attribute 'font-lock-type-face nil :foreground "burlywood3")
+;(set-face-attribute 'font-lock-variable-name-face nil :foreground "burlywood3")
 
 (defun post-load-stuff ()
   (interactive)
   (menu-bar-mode -1)
   (maximize-frame)
-  (set-foreground-color "burlywood3")
+  (set-foreground-color "#bbbbbb")
   (set-background-color "#161616")
-  (set-cursor-color "#40FF40")
+  (set-cursor-color "#f8f8f0")
 )
 (add-hook 'window-setup-hook 'post-load-stuff t)
 
@@ -610,7 +622,8 @@ There are two things you can do about this warning:
 
 (setq inhibit-startup-screen t)
 
-(load-theme 'gruvbox-dark-hard)
+;(load-theme 'gruvbox-dark-hard)
+(load-theme 'doom-tomorrow-night t)
 
 (setq make-backup-files nil)
 (setq auto-save-default nil)
