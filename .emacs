@@ -434,9 +434,9 @@ There are two things you can do about this warning:
   "Prevent consecutive marks activating bloody `transient-mark-mode'."
   (if transient-mark-mode (setq transient-mark-mode nil)))
 
-(defadvice mouse-set-region-1 (after no-bloody-t-m-m activate)
-  "Prevent mouse commands activating bloody `transient-mark-mode'."
-  (if transient-mark-mode (setq transient-mark-mode nil))) 
+;(defadvice mouse-set-region-1 (after no-bloody-t-m-m activate)
+ ; "Prevent mouse commands activating bloody `transient-mark-mode'."
+;  (if transient-mark-mode (setq transient-mark-mode nil))) 
 
 (defun append-as-kill ()
   "Performs copy-region-as-kill as an append."
@@ -624,8 +624,7 @@ There are two things you can do about this warning:
 
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
-(require 'all-the-icons)
-
+	 
 ;(load-theme 'gruvbox-dark-hard)
 (load-theme 'doom-tomorrow-night t)
 
