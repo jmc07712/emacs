@@ -26,6 +26,8 @@ airline-themes
 powerline
 <M+x> package-install RET
 doom-themes
+<M+x> package-install RET
+neotree
 ```
 
 This completes it! Enjoy!
